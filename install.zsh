@@ -12,8 +12,9 @@ export DOTFILES_LOCATION;
 ###
 # Install dependencies
 ###
+install zsh
 #./bin/dotfiles install omz
-./bin/dotfiles install zsh
+#./bin/dotfiles install zsh
 #./bin/dotfiles install brew
 #./bin/dotfiles install vscode
 #./bin/dotfiles install git
