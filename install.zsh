@@ -2,6 +2,7 @@
 
 set -e
 
+echo $(pwd)
 ###
 # Installation of packages, configurations, and dotfiles.
 ###
