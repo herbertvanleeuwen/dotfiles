@@ -6,7 +6,8 @@ echo $(pwd)
 ###
 # Installation of packages, configurations, and dotfiles.
 ###
-DOTFILES_LOCATION=$(pwd)
+#DOTFILES_LOCATION=$(pwd)
+DOTFILES_LOCATION="~/dotfiles"
 export DOTFILES_LOCATION;
 
 ###
