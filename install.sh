@@ -2,18 +2,19 @@
 
 set -e
 
+echo $(pwd)
 
 ###
 # Installation of packages, configurations, and dotfiles.
 ###
 #DOTFILES_LOCATION=$(pwd)
-DOTFILES_LOCATION="~/.dotfiles"
+DOTFILES_LOCATION=$(pwd)
 export DOTFILES_LOCATION;
 
 ###
 # Install dependencies
 ###
-./bin/dotfiles install zsh
+./bin/dotfiles_install install zsh
 #./bin/dotfiles install omz
 #./bin/dotfiles install zsh
 #./bin/dotfiles install brew
