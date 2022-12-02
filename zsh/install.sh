@@ -8,4 +8,4 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "${DOTFILES_L
 
 ln -s "${DOTFILES_LOCATION}/zsh/themes/spaceship-prompt/spaceship.zsh-theme" "${HOME}/.oh-my-zsh/themes/spaceship.zsh-theme"
 
-
+chsh -s $(which zsh)
