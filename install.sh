@@ -11,6 +11,7 @@ echo $(pwd)
 DOTFILES_LOCATION=$(pwd)
 export DOTFILES_LOCATION;
 
+chmod u+x ./bin/dotfiles_install
 ###
 # Install dependencies
 ###
