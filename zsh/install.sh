@@ -3,6 +3,7 @@
 set -e
 
 echo ${DOTFILES_LOCATION}
+echo SZSH_CUSTOM
 
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
