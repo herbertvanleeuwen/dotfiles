@@ -2,24 +2,26 @@
 
 set -e
 
-echo $(pwd)
+source ./bin/generic_shell_functions
 
 ###
 # Installation of packages, configurations, and dotfiles.
-###
-#DOTFILES_LOCATION=$(pwd)
-DOTFILES_LOCATION=$(pwd)
-export DOTFILES_LOCATION;
+### 
+
+#Setup environment file
+echo $(pwd)
+DOTFILES=$(pwd -P)
+export DOTFILES;
+./bin/env_file
 
 ###
 # Install dependencies
 ###
 ./bin/dotfiles_install install zsh
+./bin/dotfiles_install install git
 #./bin/dotfiles install omz
-#./bin/dotfiles install zsh
 #./bin/dotfiles install brew
 #./bin/dotfiles install vscode
-#./bin/dotfiles install git
 #./bin/dotfiles install github
 #./bin/dotfiles install node
 #./bin/dotfiles install mongodb

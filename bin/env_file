@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+create_env_file () {
+    if test -f "$HOME/.env.sh"; then
+        fail "$HOME/.env.sh file already exists, skipping"
+    else
+        echo "export DOTFILES=$DOTFILES" > $HOME/.env.sh
+        success 'created ~/.env.sh'
+    fi
+}
+
+create_env_file
