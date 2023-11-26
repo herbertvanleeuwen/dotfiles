@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+DOTFILES=$(pwd -P)
+export DOTFILES
+
 create_env_file () {
     if test -f "$HOME/.env.sh"; then
         fail "$HOME/.env.sh file already exists, skipping"
