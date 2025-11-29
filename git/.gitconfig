@@ -1,3 +1,10 @@
 [user]
 	name = Herbert van Leeuwen
 	email = 30523103+herbertvanleeuwen@users.noreply.github.com
+[safe]
+	directory = /github/workspace
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
