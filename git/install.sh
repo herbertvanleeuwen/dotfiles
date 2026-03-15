@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 
-ln -sf $DOTFILES/git/.gitconfig $HOME/.gitconfig
+set -e
+
+ln -sf "${DOTFILES}/git/.gitconfig" "${HOME}/.gitconfig"
 success "linked gitconfig"

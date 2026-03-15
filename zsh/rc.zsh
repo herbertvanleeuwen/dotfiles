@@ -38,22 +38,22 @@ else
     plugins=(docker docker-compose pyenv git macos pylint python poetry direnv)
   fi
 fi
-source $ZSH/oh-my-zsh.sh
+if [ -f "$ZSH/oh-my-zsh.sh" ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
 
 # Pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # hook direnv
-eval "$(direnv hook zsh)"
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
 
 # User configuration
 # Preferred editor for local and remote sessions
-export EDITOR='code' 
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.3.5
+export EDITOR='code'

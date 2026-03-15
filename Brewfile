@@ -1,4 +1,6 @@
 tap "homebrew/bundle"
+# Z shell
+brew "zsh"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Distributed revision control system
