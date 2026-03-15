@@ -29,4 +29,4 @@ fi
 ln -sf "${DOTFILES}/zsh/themes/spaceship-prompt/spaceship.zsh-theme" "${HOME}/.oh-my-zsh/themes/spaceship.zsh-theme"
 success "linked spaceship theme"
 
-chsh -s $(which zsh)
+chsh -s $(which zsh) || info "Could not change shell automatically — run 'chsh -s \$(which zsh)' manually or change it via System Settings > Users & Groups"
