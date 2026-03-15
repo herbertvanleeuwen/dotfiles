@@ -34,3 +34,4 @@ success "brew bundle complete"
 ###
 ./bin/dotfiles_install install zsh
 ./bin/dotfiles_install install git
+./bin/dotfiles_install install vscode

@@ -1,3 +1,11 @@
 {
-    "terminal.integrated.automationProfile.osx": {}
+    "terminal.integrated.automationProfile.osx": {},
+    "[shellscript]": {
+        "editor.formatOnSave": false
+    },
+    "files.associations": {
+        "dotfiles_install": "shellscript",
+        "env_file": "shellscript",
+        "generic_shell_functions": "shellscript"
+    }
 }

@@ -10,3 +10,5 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Code editor
+cask "visual-studio-code"
