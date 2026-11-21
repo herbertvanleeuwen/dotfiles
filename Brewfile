@@ -12,3 +12,5 @@ brew "pyenv-virtualenv"
 cask "iterm2"
 # Code editor
 cask "visual-studio-code"
+# Downloads purchased Audible books as DRM-free files (for Audiobookshelf)
+cask "libation"

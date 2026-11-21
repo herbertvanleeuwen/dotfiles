@@ -1,2 +1,7 @@
 .DS_Store
 zsh/themes/
+
+# Never commit SSH private keys
+ssh/*
+!ssh/config
+!ssh/install.sh

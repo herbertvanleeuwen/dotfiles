@@ -10,10 +10,11 @@ Personal macOS (Apple Silicon) dotfiles for Herbert van Leeuwen. Manages shell c
 |------|-------|--------------|
 | **Shell** | `zsh/rc.zsh` → `~/.zshrc` | oh-my-zsh, spaceship prompt, pyenv, direnv, plugins |
 | **Login shell** | `zsh/zprofile` → `~/.zprofile` | Homebrew env, pyenv PATH setup |
-| **Aliases** | `zsh/aliases.zsh` | Shortcuts (venv, ssh, PyCharm) |
+| **Aliases** | `zsh/aliases.zsh` | Shortcuts (venv, ssh, PyCharm, home server) |
+| **SSH** | `ssh/config` → `~/.ssh/config` | Host shortcuts (`home-server`, GitHub). Keys are not in the repo |
 | **Prompt theme** | `zsh/spaceship.zsh` | Spaceship configuration (Python, virtualenv, gcloud) |
 | **Git** | `git/.gitconfig` → `~/.gitconfig` | User identity, osxkeychain credential helper |
-| **Packages** | `Brewfile` | zsh, git, direnv, pyenv, pyenv-virtualenv, iterm2 |
+| **Packages** | `Brewfile` | zsh, git, direnv, pyenv, pyenv-virtualenv, iterm2, VS Code, Libation |
 | **Environment** | `~/.env.sh` (generated) | Persists `$DOTFILES` path across sessions |
 
 ---
@@ -48,7 +49,8 @@ The installer will:
 5. Symlink `~/.zshrc` and `~/.zprofile` into the repo
 6. Clone spaceship-prompt and link the theme into oh-my-zsh
 7. Symlink `~/.gitconfig` into the repo
-8. Change your default shell to zsh
+8. Symlink `~/.ssh/config` into the repo
+9. Change your default shell to zsh
 
 Open a new terminal window after install — the spaceship prompt should load immediately.
 
@@ -80,6 +82,9 @@ dotfiles/
 │   ├── dotfiles_install    # Helper: cd into package dir and run install.sh
 │   ├── env_file            # Creates ~/.env.sh
 │   └── generic_shell_functions  # info / success / fail logging
+├── ssh/
+│   ├── install.sh          # Symlinks ~/.ssh/config
+│   └── config              # SSH host shortcuts (no keys!)
 ├── git/
 │   ├── install.sh          # Symlinks .gitconfig
 │   └── .gitconfig          # Git identity + osxkeychain credential helper
@@ -137,6 +142,30 @@ echo 'export MY_SECRET=foo' >> ~/.env.sh
 | `pyenv` | Python version management |
 | `pyenv-virtualenv` | Virtualenv management via pyenv |
 | `iterm2` | Terminal emulator |
+| `visual-studio-code` | Code editor |
+| `libation` | Downloads purchased Audible books as DRM-free files |
+
+---
+
+## Home server shortcuts
+
+Home server `perzik-hq` at `192.168.1.147` (fixed via a DHCP reservation on the router).
+Reachable away from home over the WireGuard VPN (`vpn.herbertvanleeuwen.com`).
+
+**After a fresh install**, copy the private key into place (it's not in this repo):
+```sh
+cp /path/to/backup/home-server ~/.ssh/home-server && chmod 600 ~/.ssh/home-server
+```
+
+| Shortcut | What it does |
+|---|---|
+| `hs` | SSH into the server |
+| `hsps` | List running containers |
+| `hsvpn` | WireGuard peers + last handshake |
+| `hslogs <container>` | Follow a container's logs |
+| `hsrestart <container>` | Restart a container |
+| `hsbook <folder> "<Author>"` | Copy an audiobook folder to Audiobookshelf |
+| `paperless`, `budget`, `audiobooks`, `portainer`, `proxymanager` | Open the web UI |
 
 ---
 

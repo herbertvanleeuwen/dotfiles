@@ -1,0 +1,8 @@
+Host home-server
+  HostName 192.168.1.147
+  User herbert
+  IdentityFile ~/.ssh/home-server
+
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
