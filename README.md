@@ -165,7 +165,7 @@ cp /path/to/backup/home-server ~/.ssh/home-server && chmod 600 ~/.ssh/home-serve
 | `hslogs <container>` | Follow a container's logs |
 | `hsrestart <container>` | Restart a container |
 | `hsbook <folder> "<Author>"` | Copy an audiobook folder to Audiobookshelf |
-| `audiobooks`, `bookrequests`, `prowlarr`, `sabnzbd`, `portainer`, `proxymanager` | Open the web UI |
+| `sso`, `audiobooks`, `bookrequests`, `prowlarr`, `sabnzbd`, `adguard`, `portainer`, `traefik` | Open the web UI (`https://*.home.herbertvanleeuwen.com`, one authentik login) |
 
 ---
 

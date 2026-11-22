@@ -10,15 +10,17 @@ alias hsps="ssh home-server 'docker ps --format \"table {{.Names}}\t{{.Status}}\
 alias hsvpn="ssh home-server 'docker exec wireguard wg show'"  # VPN peers + last handshake
 hslogs() { ssh -t home-server "docker logs -f --tail 100 ${1:?usage: hslogs <container>}"; }  # follow a container's logs
 hsrestart() { ssh home-server "docker restart ${1:?usage: hsrestart <container>}"; }        # restart a container
-alias portainer="open https://192.168.1.147:9443"
-alias proxymanager="open http://192.168.1.147:81"
-alias audiobooks="open http://192.168.1.147:13378"
+alias portainer="open https://portainer.home.herbertvanleeuwen.com"
+alias audiobooks="open https://audiobooks.home.herbertvanleeuwen.com"
 # Copy an audiobook folder to the server: hsbook "~/Downloads/Book Title" "Author Name"
 hsbook() {
   [[ -d "$1" && -n "$2" ]] || { echo 'usage: hsbook <book-folder> "<Author Name>"'; return 1; }
   ssh home-server "mkdir -p \"/mnt/data/media/audiobooks/$2\"" &&
   rsync -ah --progress "$1" "home-server:'/mnt/data/media/audiobooks/$2/'"
 }
-alias bookrequests="open http://192.168.1.147:8787"   # Bindery: request audiobooks
-alias sabnzbd="open http://192.168.1.147:8080"        # Usenet download queue
-alias prowlarr="open http://192.168.1.147:9696"       # Usenet indexers
+alias bookrequests="open https://books.home.herbertvanleeuwen.com"   # Bindery: request audiobooks
+alias sabnzbd="open https://sabnzbd.home.herbertvanleeuwen.com"        # Usenet download queue
+alias prowlarr="open https://prowlarr.home.herbertvanleeuwen.com"       # Usenet indexers
+alias sso="open https://auth.home.herbertvanleeuwen.com"              # authentik: one login for the home server apps
+alias adguard="open https://dns.home.herbertvanleeuwen.com"          # AdGuard Home (DNS, ad blocking)
+alias traefik="open https://traefik.home.herbertvanleeuwen.com/dashboard/"
