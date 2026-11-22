@@ -19,5 +19,6 @@ hsbook() {
   ssh home-server "mkdir -p \"/mnt/data/media/audiobooks/$2\"" &&
   rsync -ah --progress "$1" "home-server:'/mnt/data/media/audiobooks/$2/'"
 }
-alias bookrequests="open http://192.168.1.147:5299"   # LazyLibrarian: request audiobooks
+alias bookrequests="open http://192.168.1.147:8787"   # Bindery: request audiobooks
 alias sabnzbd="open http://192.168.1.147:8080"        # Usenet download queue
+alias prowlarr="open http://192.168.1.147:9696"       # Usenet indexers
